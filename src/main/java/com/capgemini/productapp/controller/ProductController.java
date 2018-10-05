@@ -30,7 +30,7 @@ public class ProductController {
 	}
 	
 	@PutMapping("/product")
-	public ResponseEntity<Product> updateProduct(Product product) {
+	public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
 		try {
 			Product productFromDb = 
 					productService.findProductById(product.getProductId());
@@ -57,10 +57,10 @@ public class ProductController {
 	}
 	
 	@DeleteMapping("/products/{productId}")
-	public ResponseEntity<Product> deleteProduct(Product product) {
+	public ResponseEntity<Product> deleteProduct(@PathVariable int productId) {
 		try {
 			Product productFromDb = 
-					productService.findProductById(product.getProductId());
+					productService.findProductById(productId);
 			if(productFromDb != null) {
 				productService.deleteProduct(productFromDb);
 				return new ResponseEntity<Product>(HttpStatus.OK);
