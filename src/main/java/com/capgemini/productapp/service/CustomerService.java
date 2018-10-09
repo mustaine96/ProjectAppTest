@@ -4,7 +4,6 @@ import com.capgemini.productapp.entity.Customer;
 import com.capgemini.productapp.exception.AuthenticationFailedException;
 import com.capgemini.productapp.exception.CustomerNotFoundException;
 
-import antlr.collections.List;
 
 public interface CustomerService {
 	

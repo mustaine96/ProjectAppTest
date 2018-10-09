@@ -1,11 +1,10 @@
 package com.capgemini.productapp.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "customer")
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "customer")
 public class Customer {
 
 	@Id

@@ -14,6 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -23,12 +24,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.capgemini.productapp.controller.CustomerController;
 import com.capgemini.productapp.entity.Customer;
 import com.capgemini.productapp.service.CustomerService;
+import com.capgemini.productapp.service.impl.CustomerServiceImpl;
 
-@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 public class CustomerControllerTest {
 	@Mock
-	private CustomerService service;
+	private CustomerServiceImpl service;
 	@InjectMocks
 	private CustomerController controller;
 
